@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		D0CA6E462C45FAD500638FB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6E452C45FAD500638FB1 /* AppDelegate.swift */; };
 		D0CA6E482C45FAD500638FB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6E472C45FAD500638FB1 /* SceneDelegate.swift */; };
-		D0CA6E4A2C45FAD500638FB1 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6E492C45FAD500638FB1 /* CalculatorViewController.swift */; };
 		D0CA6E4D2C45FAD500638FB1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D0CA6E4C2C45FAD500638FB1 /* Base */; };
 		D0CA6E4F2C45FAD600638FB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0CA6E4E2C45FAD600638FB1 /* Assets.xcassets */; };
 		D0CA6E522C45FAD600638FB1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D0CA6E512C45FAD600638FB1 /* Base */; };
 		D0CA6E5D2C45FC6500638FB1 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6E5C2C45FC6500638FB1 /* ResultViewController.swift */; };
+		D0CA6E5F2C462D5800638FB1 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6E5E2C462D5800638FB1 /* CalculatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D0CA6E422C45FAD500638FB1 /* iTipsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTipsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0CA6E452C45FAD500638FB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0CA6E472C45FAD500638FB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D0CA6E492C45FAD500638FB1 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		D0CA6E4C2C45FAD500638FB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0CA6E4E2C45FAD600638FB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0CA6E512C45FAD600638FB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0CA6E532C45FAD600638FB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0CA6E5C2C45FC6500638FB1 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		D0CA6E5E2C462D5800638FB1 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +73,8 @@
 		D0CA6E592C45FAFC00638FB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D0CA6E492C45FAD500638FB1 /* CalculatorViewController.swift */,
 				D0CA6E5C2C45FC6500638FB1 /* ResultViewController.swift */,
+				D0CA6E5E2C462D5800638FB1 /* CalculatorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,9 +165,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0CA6E4A2C45FAD500638FB1 /* CalculatorViewController.swift in Sources */,
 				D0CA6E462C45FAD500638FB1 /* AppDelegate.swift in Sources */,
 				D0CA6E482C45FAD500638FB1 /* SceneDelegate.swift in Sources */,
+				D0CA6E5F2C462D5800638FB1 /* CalculatorViewController.swift in Sources */,
 				D0CA6E5D2C45FC6500638FB1 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
