@@ -27,7 +27,9 @@ class CalculatorViewController: UIViewController {
         tipButtons = [zeroPctButton, tenPctButton, twentyPctButton]
     }
     
+    
     @IBAction func tipPressed(_ sender: UIButton) {
+        billTextField.endEditing(true)
         for button in tipButtons ?? []{
             if sender == button{
                 button.isSelected = true
@@ -45,7 +47,6 @@ class CalculatorViewController: UIViewController {
                 button.isSelected = false
             }
         }
-        print(tipValue ?? "Nil")
     }
     
     @IBAction func stepperPressed(_ sender: UIStepper) {
@@ -53,6 +54,24 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        print(stepperNumberLabel.text ?? "Nil")
+        guard let userInputText = billTextField.text, let billValue = Float(userInputText) else {
+            print("Invalid bill value")
+            return
+        }
+        
+        guard let numberOfPeopleText = stepperNumberLabel.text, let numberOfPeople = Float(numberOfPeopleText) else {
+            print("Invalid number of people")
+            return
+        }
+        
+        guard let tipValue = tipValue else {
+            print("No tip value selected")
+            return
+        }
+        
+        let result = (billValue + (billValue * tipValue)) / numberOfPeople
+        print(result)
     }
+    
+    
 }
