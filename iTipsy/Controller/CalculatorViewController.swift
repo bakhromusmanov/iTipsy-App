@@ -19,34 +19,15 @@ class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var stepperNumberLabel: UILabel!
     
-    var tipButtons: [UIButton]?
-    var tipValue: Float?
+    var tipBrain = TipBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tipButtons = [zeroPctButton, tenPctButton, twentyPctButton]
     }
-    
     
     @IBAction func tipPressed(_ sender: UIButton) {
         billTextField.endEditing(true)
-        for button in tipButtons ?? []{
-            if sender == button{
-                button.isSelected = true
-                switch button.currentTitle {
-                case "0%":
-                    tipValue = 0.0
-                case "10%":
-                    tipValue = 0.1
-                case "20%":
-                    tipValue = 0.2
-                default:
-                    tipValue = 0.0
-                }
-            } else {
-                button.isSelected = false
-            }
-        }
+        tipBrain.tipPctSelected(zeroPctButton, tenPctButton, twentyPctButton, sender: sender)
     }
     
     @IBAction func stepperPressed(_ sender: UIStepper) {
@@ -54,23 +35,10 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        guard let userInputText = billTextField.text, let billValue = Float(userInputText) else {
-            print("Invalid bill value")
-            return
-        }
-        
-        guard let numberOfPeopleText = stepperNumberLabel.text, let numberOfPeople = Float(numberOfPeopleText) else {
-            print("Invalid number of people")
-            return
-        }
-        
-        guard let tipValue = tipValue else {
-            print("No tip value selected")
-            return
-        }
-        
-        let result = (billValue + (billValue * tipValue)) / numberOfPeople
-        print(result)
+        tipBrain.calculateBillValue(billTextField)
+        tipBrain.getNumberOfPeople(stepperNumberLabel)
+        tipBrain.calculateResult()
+        print(tipBrain.result)
     }
     
     

@@ -7,22 +7,28 @@
 
 import UIKit
 
-struct TipBrain{
-    var tipValue: Float
+class TipBrain{
+    var tipPct: Float = 0
+    var numberOfPeople: Float = 2
+    var result: Float = 0
+    var billValue: Float = 0
     
-    mutating func tipPctSelected (tipButtons: [UIButton], sender: UIButton){
+    func tipPctSelected (_ zeroPctButton: UIButton,  _ tenPctButton: UIButton, _ twentyPctButton: UIButton, sender: UIButton){
+        
+        let tipButtons: [UIButton] = [zeroPctButton, tenPctButton, twentyPctButton]
+        
         for button in tipButtons{
             if sender == button{
                 button.isSelected = true
                 switch button.currentTitle {
                 case "0%":
-                    tipValue = 0.0
+                    tipPct = 0.0
                 case "10%":
-                    tipValue = 0.1
+                    tipPct = 0.1
                 case "20%":
-                    tipValue = 0.2
+                    tipPct = 0.2
                 default:
-                    tipValue = 0.0
+                    tipPct = 0.0
                 }
             } else {
                 button.isSelected = false
@@ -30,4 +36,21 @@ struct TipBrain{
         }
     }
     
+    func calculateBillValue(_ billTextField: UITextField){
+        if let text = billTextField.text, let value = Float(text) {
+            billValue = value
+        } else {
+            print("Bill value text was inappropriate")
+        }
+    }
+    
+    func getNumberOfPeople(_ stepperNumberLabel: UILabel){
+        if let text = stepperNumberLabel.text, let number = Float(text){
+            numberOfPeople = number
+        }
+    }
+    
+    func calculateResult(){
+        result = (billValue + (billValue * tipPct)) / numberOfPeople
+    }
 }
