@@ -38,8 +38,18 @@ class CalculatorViewController: UIViewController {
         tipBrain.calculateBillValue(billTextField)
         tipBrain.getNumberOfPeople(stepperNumberLabel)
         tipBrain.calculateResult()
-        print(tipBrain.result)
+
+        performSegue(withIdentifier: "goToResult", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResult" {
+            let destinationViewController = segue.destination as! ResultViewController
+            // Pass data to the destination view controller
+            destinationViewController.tipBrain = self.tipBrain
+        }
+    }
+
     
     
 }

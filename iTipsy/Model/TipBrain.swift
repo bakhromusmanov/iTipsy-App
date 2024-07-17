@@ -53,4 +53,5 @@ class TipBrain{
     func calculateResult(){
         result = (billValue + (billValue * tipPct)) / numberOfPeople
     }
+    
 }
